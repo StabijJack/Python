@@ -12,4 +12,4 @@ def genPrimes():
             primes.append(n)
             yield n
 gP=genPrimes()
-gP.__next__()
+print(gP.__next__())
