@@ -1,25 +1,19 @@
-def swapSort(L): 
-    """ L is a list on integers """
-    print("Original L: ", L)
-    for i in range(len(L)):
-        for j in range(i+1, len(L)):
-            if L[j] < L[i]:
-                # the next line is a short 
-                # form for swap L[i] and L[j]
-                L[j], L[i] = L[i], L[j] 
-                print(L)
-    print("Final L: ", L)
-def modSwapSort(L): 
-    """ L is a list on integers """
-    print("Original L: ", L)
-    for i in range(len(L)):
-        for j in range(len(L)):
-            if L[j] < L[i]:
-                # the next line is a short 
-                # form for swap L[i] and L[j]
-                L[j], L[i] = L[i], L[j] 
-                print(L)
-    print("Final L: ", L)
-    
-l= [2,3,4,5,0]
-modSwapSort(l)
+class Employee(object):
+  """Models real-life employees!"""
+  def __init__(self, employee_name):
+    self.employee_name = employee_name
+
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 20.00
+
+# Add your code below!
+class PartTimeEmployee(Employee):
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return self.hours * 12.00
+  def full_time_wage (self, hours):
+    return Employee.calculate_wage(self,hours)
+
+milton = PartTimeEmployee("milton")
+print(milton.full_time_wage(10))
